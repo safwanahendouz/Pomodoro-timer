@@ -6,11 +6,11 @@
 }
 
 body {
-    background: linear-gradient(to right, #eb5122, #E8D8C3);
+    background-color: rgb(11, 13, 14);
 }
 
 .container {
-    background-color: #1b1b1b;
+    background-color: #2b2a2a;
     width: min(90%, 500px);
     position: absolute;
     transform: translate(-50%,-50%);
@@ -38,4 +38,55 @@ button {
     display: flex;
     gap: 1em;
     justify-content: center;
+}
+
+.btn {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    background-color: #3e3f43;
+    color: #a9a7a7;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+
+.btn-focus {
+    background-color: #cb202d;
+    color: #ffff;
+}
+
+.time-btn-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2em;
+}
+
+#time {
+    text-align: center;
+    color: #ffff;
+    font-size: 5em;
+    font-weight: 600;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+#btn-start,
+#btn-pause {
+    padding: 1em 2em;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: #ffff;
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+}
+
+#btn-reset {
+    background-color: transparent;
 }
