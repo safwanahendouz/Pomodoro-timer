@@ -35,5 +35,18 @@ const removeFocus = () => {
 
 focusButton.addEventListener("click", () => {
     removeFocus();
-    focusButton.classList.add();
-})
+    focusButton.classList.add("btn focus");
+    pausetimer();
+    minCount = 24;
+    count = 59;
+    time.textContent = `${minCount + 1}:00` ;
+});
+
+shortBreakButton.addEventListener("click",() => {
+    removeFocus();
+    shortBreakButton.classList.add("btn-focus");
+    pauseTimer();
+    minCount = 4;
+    count = 59;
+    time.textContent = `${appendZero(minCount + 1)}00`;
+    })
