@@ -49,4 +49,25 @@ shortBreakButton.addEventListener("click",() => {
     minCount = 4;
     count = 59;
     time.textContent = `${appendZero(minCount + 1)}00`;
+});
+
+longBreakButton.addEventListener("click", () => {
+    removeFocus();
+    longBreakButton.classList.add("btn-focus");
+    pauseTimer();
+    minCount = 14;
+    count = 59;
+    time.textContent = `${minCount + 1}:00`;
+});
+
+pause.addEventListener(
+    "click",
+    (pauseTime = () => {
+        paused = true;
+        clearInterval(set);
+        startBtn.classList.remove("hide");
+        pause.classList.remove("show");
+        reset.classList.remove("show");
     })
+) ;
+
