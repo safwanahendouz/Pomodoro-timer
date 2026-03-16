@@ -45,12 +45,13 @@ const removeFocus = () => {
 };
 
 focusButton.addEventListener("click", () => {
+    active = "focus";
     removeFocus();
-    focusButton.classList.add("btn focus");
-    pausetimer();
+    focusButton.classList.add("btn-focus");
+    pauseTimer();
     minCount = 24;
     count = 59;
-    time.textContent = `${minCount + 1}:00` ;
+    time.textContent = `${appendZero(minCount + 1)}:00`;
 });
 
 shortBreakButton.addEventListener("click",() => {
@@ -60,7 +61,7 @@ shortBreakButton.addEventListener("click",() => {
     pauseTimer();
     minCount = 4;
     count = 59;
-    time.textContent = `${appendZero(minCount + 1)}00`;
+    time.textContent = `${appendZero(minCount + 1)}:00`;
 });
 
 longBreakButton.addEventListener("click", () => {
@@ -70,7 +71,7 @@ longBreakButton.addEventListener("click", () => {
     pauseTimer();
     minCount = 14;
     count = 59;
-    time.textContent = `${minCount + 1}:00`;
+    time.textContent = `${appendZero(minCount + 1)}:00`;
 });
 
 pause.addEventListener(
@@ -108,6 +109,3 @@ startBtn.addEventListener("click", () => {
         },1000);
     }
 });
-
-
-
