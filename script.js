@@ -7,6 +7,7 @@ let reset = document.getElementById("btn-reset");
 let pause = document.getElementById("btn-pause");
 let time = document.getElementById("time");
 let set;
+let active = "focus";
 let count = 59;
 let paused = true;
 let minCount = 24;
@@ -21,8 +22,18 @@ reset.addEventListener(
     "click",
     (resetTime = () => {
         pauseTimer();
+        switch(active) {
+            case "long":
+                minCount = 14;
+                break;
+            case "short":
+                minCount = 4;
+                break;
+            default:
+                    minCount = 24;
+                    break;
+        }
         count = 59;
-        minCount = 24;
         time.textContent = `${minCount + 1}:00`;
     })
 );
@@ -43,6 +54,7 @@ focusButton.addEventListener("click", () => {
 });
 
 shortBreakButton.addEventListener("click",() => {
+    active = "short";
     removeFocus();
     shortBreakButton.classList.add("btn-focus");
     pauseTimer();
@@ -52,6 +64,7 @@ shortBreakButton.addEventListener("click",() => {
 });
 
 longBreakButton.addEventListener("click", () => {
+    active = "long";
     removeFocus();
     longBreakButton.classList.add("btn-focus");
     pauseTimer();
@@ -62,7 +75,7 @@ longBreakButton.addEventListener("click", () => {
 
 pause.addEventListener(
     "click",
-    (pauseTime = () => {
+    (pauseTimer = () => {
         paused = true;
         clearInterval(set);
         startBtn.classList.remove("hide");
@@ -82,9 +95,19 @@ startBtn.addEventListener("click", () => {
         (minCount)}:${appendZero(count)}`;
         set = setInterval(() => {
             count--;
-            time.textContent = ${appendZero
-                (minCount)
-            }})
+            time.textContent = `${appendZero
+            (minCount)}:${appendZero(count)}`;
+            if (count == 0) {
+                if (minCount != 0) {
+                    minCount--;
+                    count = 60;
+                } else {
+                    clearInterval(set);
+                }
+            }
+        },1000);
     }
 });
+
+
 
