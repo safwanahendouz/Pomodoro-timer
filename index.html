@@ -5,25 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <title>Pomodoro timer</title>
 </head>
 <body>
     <div class="container">
-        <div class="section-title">
-            <button id="focus" class="btn btn-timer btn-focus">
+        <div class="section-container">
+            <button id="focus" class="btn btn-timer btn-focus">focus
             </button>
+            <button id="shortbreak" class="btn btn-timer">Short break</button>
+            <button id="longbreak" class="btn btn-timer">Long break</button>
         </div>
-        <button id="shortbreak" class="btn btn-timer">Short break</button>
-        <button id="Longbreak" class="btn btn-Longbreak">Long break</button>
-    </div>
-    <div class="time-btn-container">
-        <span id="time"></span>
-        <div class="btn-container">
-            <button id="btn-start" 
-            class="hide">Pause</button>
-            <button id="btn-reset" class="hidz">
-                
-            </button>
+        <div class="time-btn-container">
+            <span id="time"></span>
+            <div class="btn-container">
+                <button id="btn-start">Start</button>
+                <button id="btn-pause" class="hide">Pause</button>
+                <button id="btn-reset" class="hide">
+                <i class="fa-solid fa-arrow-rotate-right"></i>
+                </button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
