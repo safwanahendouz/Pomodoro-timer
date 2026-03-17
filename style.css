@@ -89,4 +89,12 @@ button {
 
 #btn-reset {
     background-color: transparent;
+    border: none;
+    outline: none;
+    color: #ffff;
+    font-size: 2em;
+}
+
+.show {
+    display: block;
 }
